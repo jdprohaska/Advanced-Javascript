@@ -1,0 +1,236 @@
+//sass variables
+$myRed: linear-gradient( #bf4e30, black);
+$content: #c0f8d1;
+$tab-content:  #e8db7d;
+$tab-inactive: #84acce;
+$content-border: #AAA;
+$footer: linear-gradient(#2d3142, black);
+
+
+//tab styling
+
+html {
+    height: 100%;
+}
+
+[data-tab-content] {
+    display: none;
+}
+
+.active[data-tab-content] {
+    display: block;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-image: $myRed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: auto;
+    margin-bottom: -5px;
+    padding: 0;
+    width: 1200px;
+    background-color: $tab-inactive;
+    font-size: 16px;
+    
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px;
+    
+    
+
+}
+
+.tab.active {
+    background-color: $tab-content;
+}
+
+.tab:hover {
+    background-color: $content-border;
+}
+
+.tab-content {
+    margin-left: 20px;
+    margin-right: 20px;
+    
+   
+}
+
+//tab styling end
+.title {
+    font-family: 'Kaushan Script', cursive;
+    color: red;
+   
+    
+}
+
+.wrapper {
+    padding: 0px;
+    max-width: 1200px;
+    width: 95%;
+    margin: auto;
+}
+
+.columns {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 20px;
+    margin: 5px;
+    background-color: $tab-content;
+    align-items: flex-start;
+    
+  
+  
+
+}
+
+.column {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    
+    
+    
+
+    h1 {
+        background-color: $content;
+        width: 80%;
+        margin: auto;
+        border: 1px solid $content-border;
+        padding: 5px;
+    }
+
+    
+}
+
+
+
+.column:first-child {
+    margin-left: 0;
+
+}
+
+.column:last-child {
+    margin-right: 0;
+}
+
+img {
+    border: 2px solid $content-border;
+    box-shadow: 5px 5px 5px black;
+    margin: 10px;
+    transition: transform .2s;
+}
+
+img:hover {
+    transform: scale(1.5);
+}
+
+.uploaderTag {
+    position: relative;
+    z-index: 2;
+    background-color: $content;
+    max-width: 100%;
+    border: 1px solid $content-border;
+    p {
+        padding: 10px;
+        align-items: center;
+        
+    }
+}
+
+.recipe-info {
+    background-color: $content;
+    border: 1px solid $content-border;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 15px;
+    width: 80%;
+}
+
+.home-content {
+    background-color: $content;
+    border: 1px solid $content-border;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.main-container {
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px;
+    
+}
+
+#footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 20px;
+    margin: 5px;
+    background-image: $footer;
+    align-items: flex-start;
+    color: white;
+    a{
+        color: white;
+    }
+
+    a:hover {
+        color: $content;
+    }
+}
+
+
+
+@media screen and (max-width: 980px) {
+    .columns .column {
+        margin-bottom: 5px;
+        flex-basis: 40%
+
+    }
+
+    .columns .column:nth-last-child(2) {
+        margin-right: 0;
+    }
+    .columns .column:last-child {
+        flex-basis: 100%;
+        margin: 0;
+    }
+    .tabs {
+        width: 85%;
+        
+    }
+}
+
+
+
+@media screen and (max-width: 680px) {
+    .columns .column {
+        flex-basis: 100%;
+        margin: 0 0 5px 0;
+    }
+    .tabs {
+        width: 85%;
+    }
+}

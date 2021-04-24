@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDV321 Date Cookie Maker</title>
+    <script>
+        function trackOpenPageTime() {
+           // alert("inside trackOpenPageTime()");
+           console.log("Cookies" + document.cookie);
+
+           let today = new Date(); //current time/date stamp
+           document.cookie = "accessTime=" + today + ";" + expires=thu, 18 Dec 2013 12:00: UTC; path=/
+       
+            console.log("after cookies" + document.cookie);
+        }
+    
+    
+    </script>
+</head>
+<!--just want to see it work. otherwise dont use html onload event handler-->
+<body onload="trackOpenPageTime()">
+    <h1>WDV321 Advanced Javascript</h1>
+    <h2>Date Cookie Maker</h2>
+</body>
+</html>

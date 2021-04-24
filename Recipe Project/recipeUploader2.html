@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Uploader</title>
+    <link rel="stylesheet" href="css/styleUploader.css">
+    <link rel="stylesheet" href="css/styleUploader.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <style>
+        #wrapper div {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="columns">
+            <div class="column">
+    <h1>upload recipe</h1>
+    </div>
+    </div>
+    <div class="columns">
+        <div class="column">
+    <form id="myForm" class="form">
+        <p>
+            <label for="recipeName">Name of recipe</label>
+            <input type="text" id="recipeName" placeholder="recipe name">
+        </p>
+        <!--recipe image start-->
+        <div>
+            <input type='file' multiple="false"
+            accept="image/*" id="recipe-img"
+            onchange="upload()">
+            
+        </div>
+        <!--recipe image end-->
+        <!--serving start-->
+        <label for="servings">Servings</label><span class="errorMessage" id="servingsErr"></span>
+        <input type="number" id="servings" step=".5">
+        <!--serving end-->
+        <!--prep start-->
+        <div class="prep-cook">
+
+            <label for="prep-time-number">Prep Time</label><span class="errorMessage" id="prepTimeErr"></span>
+            <input type="number" id="prep-time" name="prep-time" step=".5"><span id="prepTimeErr"></span>
+
+            <label for="prep-time-measure">Hours/Minutes</label><span class="errorMessage" id="prepTimeMsrErr"></span>
+            <select id="prep-time-measure">
+                <option value="default">--Select Hours/Minutes--</option>
+                <option value="Hours">Hours</option>
+                <option value="Minutes">Minutes</option>
+            </select>
+
+        </div>
+        <!--prep end-->
+        <!--cook start-->
+        <div class="prep-cook">
+
+            <label for="cook-time">Cook Time</label><span class="errorMessage" id="cookTimeErr"></span>
+            <input type="number" id="cook-time" name="cook-time" step=".5">
+
+            <label for="cook-time-measure">Hours/Minutes</label><span class="errorMessage" id="cookTimeMsrErr"></span>
+            <select id="cook-time-measure">
+                <option value="default">--Select Hours/Minutes--</option>
+                <option value="Hours">Hours</option>
+                <option value="Minutes">Minutes</option>
+            </select>
+
+        </div>
+        <!--cook end-->
+        <!--difficulty start-->
+        <div>
+            <label for="recipe-difficulty">Recipe difficulty</label>
+            <select name="recipe-difficulty" id="recipe-difficulty">
+                <option value="default">difficulty level</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <!--difficulty end-->
+        <!--ingredients start-->
+        <p>
+
+            <label for="recipeIngredients"> Recipe Ingredients:</label>
+        <div id="wrapper">
+            <div>
+                <input type="text" name="recipeIngredients" size="25" class="ingredients" data-delta="0" id="recipeIngredients"
+                    placeholder="enter ingredients">
+                <label for="ingredientAmount">Amount:</label>
+                <input type="number" value="" name="ingredientAmount" class="ingredient-amount" data-delta="0" id="ingredientAmount"
+                    placeholder="enter ingredient amount" size="25" step=".1">
+                <label for="measurement">Measurements:</label>
+                <select name="measurement" class="ingredient-measurement" data-delta="0" id="measurement">
+                    <option value="">None</option>
+                    <option value="teaspoons">Teaspoons</option>
+                    <option value="tablespoons">Tablespoons</option>
+                    <option value="cups">Cups</option>
+                    <option value="cans">Cans</option>
+                    <option value="lbs">Lbs</option>
+                </select>
+
+            </div>
+        </div>
+        <button type="button" id="btn">Add another ingredient</button>
+        </p>
+        <p>
+
+        </p>
+        <!--ingredients end-->
+        <!--Preparation start-->
+        <div id="wrapper2">
+            <div>
+                <label for="preparation">Preparation Instructions</label>
+                <input type="text" size="50" value="" class="preparation" id="preparation" placeholder="Enter Prep instructions">
+            </div>
+            
+        </div>
+        <button type="button" id="btn-prep">Add another step</button>
+        <p>
+            <input type="submit" value="Submit">
+            <input type="reset" value="reset">
+        </p>
+
+        <!--Preparation end-->
+        <!--form end-->
+    </form>
+    
+    </div>
+    
+    </div>
+    
+        <footer id="footer">
+            <div class="column">
+                <h2>Check out my original design for this site</h2>
+                <p><a href="https://xd.adobe.com/view/291abc03-b379-488b-b816-07e502bab715-7c49/"
+                        target="_blank">Original design</a></p>
+            </div>
+            <div class="column">
+                <p><a href="recipeProject.html">Home</a></p>
+                <p><a href="recipeUploader.html">Recipe Uploader</a></p>
+                <p><a href="http://jdprohaska.com/" target="_blank">jdprohaska.com</a></p>
+            </div>
+            <div class="column">
+                <div class="title">
+                    <h1>The Recipe Manager</h1>
+                </div>
+            </div>
+        </footer>
+        
+  
+    
+    
+        
+</body>
+
+</html>

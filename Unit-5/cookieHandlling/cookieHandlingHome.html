@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Handler Home</title>
+    <meta content="Cookies" name="Justin Prohaska">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <script>
+
+        homePageCounter();
+
+        function homePageCounter() {
+            let homePageViews = getCookie("counter");
+
+            if (!homePageViews) {
+                homePageViews = 1;
+            }
+            else {
+                homePageViews = parseInt(homePageViews) + 1;
+            }
+            setCookie("counter", homePageViews, 3);
+            
+
+        }
+
+        function setCookie(cookieName, cookieValue, expDate) {
+            let exDate = new Date();
+            exDate.setTime(exDate.getTime() + expDate * 24 * 60 * 60 * 1000);
+            let cExpires = "expires=" + exDate.toUTCString();
+            document.cookie = cookieName + "=" + cookieValue + ";" + cExpires;;
+        }
+
+        function getCookie(cookieName) {
+            let cookieValue = null;
+            let findCookie = document.cookie + ";";
+            let findName = cookieName + "=";
+            let endPos;
+            if (findCookie.length > 0) {
+                let beginPos = findCookie.indexOf(findName);
+                if (beginPos != -1) {
+                    beginPos = beginPos + findName.length;
+                    endPos = findCookie.indexOf(";", beginPos);
+                    if (endPos == -1)
+                        endPos = findCookie.length;
+                    cookieValue = findCookie.substring(beginPos, endPos);
+                }
+            }
+            return cookieValue;
+        }
+        console.log(getCookie("counter"));
+        console.log(getCookie("authCookie"));
+     
+    </script>
+    <style>
+  a {
+      border: 3px solid skyblue;
+      background-color: aliceblue;
+      border-radius: 25px;
+      padding: 10px;
+      
+  }
+
+  a:hover {
+      background-color: lightblue;
+  }
+
+  #securedCookie {
+      position: relative;
+      right: 15px;
+    border: 3px solid skyblue;
+      background-color: aliceblue;
+      border-radius: 25px;
+  }
+
+  #securedCookie:hover {
+      background-color: lightblue;
+  }
+    </style>
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main">
+            <header>
+                <h1>Home</h1>
+                <h2>Cookie Handling</h2>
+                <span class="avatar"><img src="images/cookie.jpeg" width="50%" alt="" /></span>
+                <h1>Justin Prohaska</h1>
+                <p><a href="cookieHandlingAbout.html">About Page</a></p>
+                <p><input type="button" value="Create Authentication Cookie" id="securedCookie"
+                        onclick="setCookie('authCookie', 'true', 180);"></p>
+            </header>
+
+
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="copyright">
+                <li>&copy; Justin Prohaska</li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        if ('addEventListener' in window) {
+            window.addEventListener('load', function () { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+            document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+        }
+    </script>
+
+</body>
+
+</html>

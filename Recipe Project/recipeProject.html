@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Recipe Project" name="Justin Prohaska">
+
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.scss">
+    <link rel="stylesheet" href="css/accordion2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <!--change in serving-->
+    <script>
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="main-container">
+
+        <ul class="tabs wrapper">
+            <li data-tab-target="#home" class="active tab">Home</li>
+            <li data-tab-target="#chili" class="tab">Crockpot Chili</li>
+            <li data-tab-target="#steak" class="tab">Steak de Burgo</li>
+            <li data-tab-target="#baklava" class="tab">Baklava</li>
+            <li data-tab-target="#user-recipe" class="tab">User recipe's</li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" data-tab-content class="active wrapper">
+                <div class="columns">
+                    <div class="column">
+                        <div class="title">
+                            <h1>The recipe manager</h1>
+                        </div>
+                        <div class="home-content">
+                            <p>Welcome to Justin's kitchen! On this site you can choose between a few different recipes
+                                all of
+                                which can be dynamically changed by serving size in order to suit your needs. Also check
+                                out the
+                                 <a href="recipeUploader.html">recipe uploader</a> and add your own recipe.</p>
+
+                        </div>
+                    </div>
+                    <div class="column">
+
+                        <img src="images/soup.jpg" width="70%"
+                            alt="Several cooking utencils laid out along with ingredients such as carrots, peppers, green beans and onions.">
+                    </div>
+
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="uploaderTag">
+                            <p>Want to add your own recipe? Try our new <a href="recipeUploader.html">Recipe
+                                    Uploader!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Home end-->
+
+            <!--crockpot chili Start-->
+
+            <div id="chili" data-tab-content class="wrapper">
+                <div class="columns">
+                    <div class="column">
+                        <h1>Crockpot Chili</h1>
+
+                        <!--accordion Start-->
+
+                        <div class="accordion">
+                            <div>
+                                <input type="radio" name="example_accordion" id="section1" class="accordion__input">
+                                <label for="section1" class="accordion__label">Ingredients</label>
+                                <div class="accordion__content">
+                                    <div id="chili-ingredients">
+                                        please select serving size
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="radio" name="example_accordion" id="section2" class="accordion__input">
+                                <label for="section2" class="accordion__label">Preparation</label>
+                                <div class="accordion__content">
+                                    <div id="chili-prep">
+                                        Please select serving size
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>
+
+                        </p>
+
+                    </div>
+
+
+                    <!--accordion end-->
+
+
+                    <div class="column">
+                        <p></p>
+                        <img src="images/chili.jpg" width="80%" alt="a bowl of chicken chilli">
+                        <div onchange="myFunction()" name="frmRadio" id="radio-recipe" class="recipe-info" action="">
+                            <h3>please select Serving size</h3>
+                            <input type="radio" name="chili" value="half" id="half"
+                                onclick="document.getElementById('radio-recipe').action='';">
+                            <label for="half">Half</label>
+                            <input type="radio" name="chili" value="full" id="full"
+                                onclick="document.getElementById('radio-recipe').action='';">
+                            <label for="full">Full</label>
+                            <input type="radio" name="chili" value="double" id="double">
+                            <label for="double">Double</label>
+                            <input type="radio" name="chili" id="" checked style="display: none;">
+                        </div>
+                        <div class="recipe-info" id="chili-info">
+
+                            <p><strong>Serves:</strong></p>
+                            <p><strong>Preparation:</strong></p>
+                            <p><strong>Cooking:</strong></p>
+                            <p><strong>Difficulty:</strong></p>
+
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="uploaderTag">
+                            <p>Want to add your own recipe? Try our new <a href="recipeUploader.html">Recipe
+                                    Uploader!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Crockpot Chili end-->
+
+            <!--steak de burgo start-->
+            <div id="steak" data-tab-content class="wrapper">
+                <div class="columns">
+                    <div class="column">
+                        <h1>Steak De Burgo</h1>
+                        <!--accordion Start-->
+
+                        <div class="accordion">
+                            <div>
+                                <input type="radio" name="example_accordion" id="section3" class="accordion__input">
+                                <label for="section3" class="accordion__label">Ingredients</label>
+                                <div class="accordion__content">
+
+                                    <div id="steak-ingredients">Please select serving size</div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="radio" name="example_accordion" id="section4" class="accordion__input">
+                                <label for="section4" class="accordion__label">Preparation</label>
+                                <div class="accordion__content">
+
+                                    <div id="steak-prep">Please select serving size</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p></p>
+                    </div>
+
+
+                    <!--accordion end-->
+
+
+                    <div class="column">
+                        <p></p>
+                        <img src="images/steak.jpg" width="80%" alt="a delicious looking steak">
+                        <div onchange="steakMenu()" name="frmRadio" id="radio-recipe" class="recipe-info" action="">
+                            <h3>please select Serving size</h3>
+                            <input type="radio" name="steak" value="half" id="steak-half">
+                            <label for="half">Half</label>
+                            <input type="radio" name="steak" value="full" id="steak-full">
+                            <label for="full">Full</label>
+                            <input type="radio" name="steak" value="double" id="steak-double">
+                            <label for="double">Double</label>
+                            <input type="radio" name="steak" id="" checked style="display: none;">
+                        </div>
+                        <div class="recipe-info" id="steak-info">
+
+                            <p><strong>Serves:</strong></p>
+                            <p><strong>Preparation:</strong></p>
+                            <p><strong>Cooking:</strong></p>
+                            <p><strong>Difficulty:</strong></p>
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="uploaderTag">
+                            <p>Want to add your own recipe? Try our new <a href="recipeUploader.html">Recipe
+                                    Uploader!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--steak de burgo end-->
+
+            <!--baklava start-->
+            <div id="baklava" data-tab-content class="wrapper">
+                <div class="columns">
+                    <div class="column">
+                        <h1>Baklava</h1>
+                        <!--accordion Start-->
+
+                        <div class="accordion">
+                            <div>
+                                <input type="radio" name="example_accordion" id="section5" class="accordion__input">
+                                <label for="section5" class="accordion__label">Ingredients</label>
+                                <div class="accordion__content">
+
+                                    <div id="baklava-ingredients">
+                                        Please select serving size
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input type="radio" name="example_accordion" id="section6" class="accordion__input">
+                                <label for="section6" class="accordion__label">Preparation</label>
+                                <div class="accordion__content">
+
+                                    <div id="baklava-prep">
+                                        Please select serving size
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p></p>
+                    </div>
+
+
+                    <!--accordion end-->
+
+
+                    <div class="column">
+                        <p></p>
+                        <img src="images/baklava-3682284_640.jpg" width="80%" alt="a delicious multi layered baklava">
+                        <div onchange="baklavaMenu()" name="frmRadio" id="radio-recipe" class="recipe-info" action="">
+                            <h3>please select Serving size</h3>
+                            <input type="radio" name="baklava" value="half" id="baklava-half">
+                            <label for="half">Half</label>
+                            <input type="radio" name="baklava" value="full" id="baklava-full">
+                            <label for="full">Full</label>
+                            <input type="radio" name="baklava" value="double" id="baklava-double">
+                            <label for="double">Double</label>
+                            <input type="radio" name="baklava" id="" checked style="display: none;">
+                        </div>
+                        <div class="recipe-info" id="baklava-info">
+                            <p><strong>Serves:</strong></p>
+                            <p><strong>Preparation:</strong></p>
+                            <p><strong>Cooking:</strong></p>
+                            <p><strong>Difficulty:</strong></p>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="uploaderTag">
+                            <p>Want to add your own recipe? Try our new <a href="recipeUploader.html">Recipe
+                                    Uploader!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--baklava end-->
+            <!--user recipe start-->
+            <div id="user-recipe" data-tab-content class="wrapper">
+                <div class="columns">
+                    <div class="column">
+                        <h1 id="recipe-name">user Uploaded Recipe</h1>
+                        
+                        <!--accordion Start-->
+                        <!--ingredients accordion start-->
+                        <div class="accordion">
+                            <div>
+                                <input type="radio" name="example_accordion" id="section7" class="accordion__input">
+                                <label for="section7" class="accordion__label">Ingredients</label>
+                                <div class="accordion__content">
+
+                                    <div id="userIngredients">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!--preparation accordion start-->
+                            <div>
+                                <input type="radio" name="example_accordion" id="section8" class="accordion__input">
+                                <label for="section8" class="accordion__label">Preparation</label>
+                                <div class="accordion__content">
+
+                                    <div id="userPrep">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <!--preparation accordion end-->
+                        </div>
+                        <p></p>
+                    </div>
+
+
+                    <!--ingredients accordion end-->
+                    
+                    <div class="column">
+                        <p></p>
+                        <img src="images/user.jpg" width="80%" alt="a User uploaded recipe">
+                        <div name="frmRadio" id="radio-recipe" class="recipe-info" action="">
+                            <h3>please select Serving size</h3>
+                            <input type="radio" name="user" value="half" id="userHalf">
+                            <label for="half">Half</label>
+                            <input type="radio" name="user" value="full" checked id="userFull">
+                            <label for="full">Full</label>
+                            <input type="radio" name="user" value="double" id="userDouble">
+                            <label for="double">Double</label>
+                            <input type="radio" name="user" id="" style="display: none;">
+                        </div>
+                        <div class="recipe-info" id="user-info">
+                            <p><strong>Serves: <span id="user-serving"></span></strong></p>
+                            <p><strong>Preparation: <span id="user-preparation"></span></strong></p>
+                            <p><strong>Cooking: <span id="user-cooking"></span></strong></p>
+                            <p><strong>Difficulty: <span id="user-difficulty"></span></strong></p>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <div class="uploaderTag">
+                            <p>Want to add your own recipe? Try our new <a href="recipeUploader.html">Recipe
+                                    Uploader!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--user recipe end-->
+
+        <div class="wrapper">
+            <footer id="footer">
+                <div class="column">
+                    <h2>Check out my original design for this site</h2>
+                    <p><a href="https://xd.adobe.com/view/291abc03-b379-488b-b816-07e502bab715-7c49/"
+                            target="_blank">Original design</a></p>
+                </div>
+                <div class="column">
+                    <p><a href="recipeProject.html">Home</a></p>
+                    <p><a href="recipeUploader.html">Recipe Uploader</a></p>
+                    <p><a href="http://jdprohaska.com/" target="_blank">jdprohaska.com</a></p>
+                </div>
+                <div class="column">
+                    <div class="title">
+                        <h1>The Recipe Manager</h1>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        //get userRecipeObj out of local storage and parse from JSON
+        let myObj = JSON.parse(localStorage.getItem("userRecipeObj"));
+        let myObj2 = JSON.parse(localStorage.getItem("userRecipeObjTest"));
+        console.log(myObj);
+        //adjusting serving size on radio change.
+        document.querySelector("#user-serving").innerHTML = myObj2.servings;
+        if (document.querySelector('#userHalf').addEventListener('click', function(){ document.querySelector('#user-serving').innerHTML = myObj2.servings / 2; }));
+        else if (document.querySelector('#userFull').addEventListener('click', function(){ document.querySelector('#user-serving').innerHTML = myObj2.servings; }));
+        else if (document.querySelector('#userDouble').addEventListener('click', function(){ document.querySelector('#user-serving').innerHTML = myObj2.servings * 2; }));
+          
+           
+        
+        
+        
+        
+
+        
+      
+        document.querySelector("#user-preparation").innerHTML = myObj2.prepTime;
+        document.querySelector("#user-cooking").innerHTML = myObj2.cookTime;
+        document.querySelector("#user-difficulty").innerHTML = myObj2.recipeDifficulty;
+        document.querySelector("#recipe-name").innerHTML = myObj2.recipeName;
+        
+        //create element for ingredients
+        let ingredients = document.createElement('ul');
+        myObj.ingredient.forEach(element => {
+            let ingredient = document.createElement('li');
+            ingredient.innerHTML = element.amount + ' ' + element.measurment + ' ' + element.name;
+            //adjust serving size of ingredients
+            //half serving
+            if (document.querySelector('#userHalf').addEventListener('click', function() { 
+                ingredient.innerHTML = element.amount / 2 + ' ' + element.measurment + ' ' + element.name; 
+            }));
+            //full serving
+            else if (document.querySelector('#userFull').addEventListener('click', function() { 
+                ingredient.innerHTML = element.amount + ' ' + element.measurment + ' ' + element.name; 
+            }));
+            //Double serving
+            else if (document.querySelector('#userDouble').addEventListener('click', function() { 
+                ingredient.innerHTML = element.amount * 2 + ' ' + element.measurment + ' ' + element.name; 
+            }));
+                ingredients.appendChild(ingredient);
+        });
+        document.querySelector('#userIngredients').appendChild(ingredients);
+        
+
+      
+
+        //create element for preparation
+        let preparations = document.createElement('ol');
+        myObj.preparation.forEach(element => {
+            let preparation = document.createElement('li');
+            preparation.innerHTML = element;
+            preparations.appendChild(preparation);
+        });
+        document.querySelector('#userPrep').appendChild(preparations);
+
+    
+
+
+        
+    </script>
+</body>
+
+</html>

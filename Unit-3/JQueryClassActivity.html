@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>		
+
+	<script>
+	
+		/*
+			document.getElementById("id");
+		
+			$()	     				//$selector! is short for "JQuery"
+			$( CSS selectors )		//Use CSS selectors to access HTML objects
+			$(.printLine)			//access any object with class=printLine
+			
+			selector.function()		//based upon the selector call a function
+		
+			$(document).ready()		//when the document is fully loaded call 
+									//the ready function
+		
+		*/
+
+		/*
+		$(document).ready(
+		
+			function(){
+				alert("JQuery is available");
+				//put your code here
+			}
+		); 
+		*/
+		
+		//Most common format for this JQuery command.
+		$(document).ready(function(){
+				alert("JQuery is available");
+				
+				$("#button2").click(function() {
+					clearDisplay();
+				});
+				
+				$("#button").click(function(){
+					displayField();
+				});					
+				
+				
+				//put your javascript/JQuery code here
+		}); 
+
+		/*List of steps required to move the input of the name field to a 
+		display field and clear them both.
+		
+			when we click the reset button call the clear function
+				assign an onclick event handler to the reset
+				call the clear function
+			write a clear function
+				set a clear value to the display field
+				clear the textfield
+				
+
+			when we click the submit button do the work
+				assign an onclick event handler to the submit
+				call the move/display function
+			write a move/display function
+				@ get the input value from the textfield
+				set the input value into the display field				
+		
+			create a display field
+		*/
+		
+		function displayField(){
+			alert("inside displayField()");
+			
+			
+			let inName = $("#inputName").val();	//return the value of the text field
+			console.log("inName " + inName);
+		
+			$("p span").html(inName);			//set the value of the display field
+		
+		}
+		
+		function clearDisplay() {
+			alert("inside clearDisplay()");
+			$("p span").html("");			//set the value of the display field		
+		}
+
+	</script>
+
+</head>
+
+<body>
+<p>WDV321 Advanced Javascript</p>
+<p>Input Processing </p>
+<form name="form1" method="post" action="">
+  <p>Name: 
+    <label for="inputName"></label>
+  <input type="text" name="inputName" id="inputName">
+  </p>
+  <p>
+    <input type="button" name="button" id="button" value="Display">
+    <input type="reset" name="button2" id="button2" value="Reset">
+  </p>
+</form>
+<p>You Entered: <span></span> </p>
+<p>&nbsp;</p>
+</body>
+</html>
+

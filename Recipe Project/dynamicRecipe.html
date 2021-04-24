@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        #wrapper div {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm" class="form">
+        <div id="wrapper">
+            <div>
+                <input type="text" name="recipeIngredients" size="10" id="recipeIngredients" value="">
+            </div>
+        </div>
+        <button type="button" id="btn">Add new input group</button>
+        <p>
+            <input type="submit" value="Submit">
+            <input type="reset" value="reset">
+        </p>
+    </form>
+
+    <script>
+        // Starting number of inputs
+        let count = 1;
+
+        // Wrapper
+        const wrapper = document.querySelector('#wrapper');
+
+        document.querySelector('#btn').addEventListener('click', () => {
+
+            const container = document.createElement('div');
+
+            for (let i = 0; i < 1; i++) {
+                // Increment the count to ensure that it is unique
+                count++;
+
+                // Create your new `<input>` element
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = `recipeIngredients${count}`;
+                input.size = '10';
+                input.id = `recipeIngredients${count}`;
+
+                container.appendChild(input);
+
+                // Optional: add empty whitespace after each child
+                container.append(document.createTextNode(' '));
+            }
+
+            wrapper.appendChild(container);
+        });
+    </script>
+
+    <script>
+        //form submission
+        const myForm = document.getElementById("myForm");
+
+        myForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            console.log("form has been submitted");
+        })
+    </script>
+    <script>
+        //stores name value pairs as javascript object
+        myForm.addEventListener("submit", (e) => {
+            document.querySelectorAll('input');
+            let userRecipe = Array.from(document.querySelectorAll('input')).reduce((acc, input) => ({ ...acc, [input.id]: input.value }), {});
+            console.log(userRecipe);
+        })
+    </script>
+</body>
+
+</html>

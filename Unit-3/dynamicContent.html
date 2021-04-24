@@ -1,0 +1,150 @@
+<html>
+	<head>
+	
+		<script>
+		
+			let arrVegetables = ["brussel sprouts","asparagus","arugula"];
+			
+			let arrDairy = ["Milk","Yogurt","Cheese","Sour Cream"];
+		
+		
+			/*
+				determine list fruits, vegetables, dairy
+					Fruit:  apples, oranges, watermelon
+					Vegetables: brussel sprouts, asparagus, arugula
+					Dairy: milk, yogurt, cheese
+				need an onclick event handler for each radio button
+				when clicked
+					need to remove the products from the list	
+					need to know which product was chosen from the radio buttons
+						(one function for each or one to do it all...)
+					need to create the options for the product
+					need to add/move/put the options in the productsList
+				
+				need a reset/clear to put the radios and select back to original state
+					add event handler for this
+					create function	
+						reset radio buttons to default
+						clear options from productsList
+		
+			*/
+			
+			function addFruitOptions()	{
+				alert("inside addFruitOptions");
+				
+				let chooseOption = "<option value=''>Choose a Product</option>";
+				let fruit1 = "<option value='apple'>Apple</option>";	
+				let fruit2 = "<option value='orange'>Orange</option>";	
+				let fruit3 = "<option value='watermelon'>Watermelon</option>";	
+				
+				//let displayDiv = document.querySelector("select div");
+				document.querySelector("select").innerHTML = chooseOption + fruit1 + fruit2 + fruit3;
+			}
+			
+			function addVegetableOptions() {
+				alert("inside addVegetableOptions()");
+				
+				//use the select.add() and select.move() technique
+				/*
+					//remove any other elements except for default option
+					
+					done:	access the select object
+					done:  remove all options from the select object
+					create a default option and add to the select object
+					done: for each product in the array
+						create the option element/object
+						add text to the option
+						add the option to the select
+				
+				*/
+				let productList = document.querySelector("select");	//access the select object
+				
+				//productList.remove(1);
+				//productList.remove(2);
+				//productList.remove(3);
+				//productList.remove(4);	
+				
+				/*this loop will remove all the options except the default
+				for(let x=1; x< productList.options.length; x++)	{
+					productList.remove(x);
+				}
+				*/
+				
+				productList.options.length = 0;	//should remove all options
+				
+				let optionObj = document.createElement("option");
+				optionObj.text = "Choose a Vegetable";			//default option
+				productList.add(optionObj);					
+				
+				for(let i=0; i < arrVegetables.length; i++ )	{
+					let optionObj = document.createElement("option");
+					optionObj.text = arrVegetables[i];		
+					productList.add(optionObj);		//add option to select
+				}
+				
+			}//end addVegetableOptions()
+			
+			function addDairyOptions()	{
+				let productList = document.querySelector("select");	//access the select object	
+				
+				productList.options.length = 0;	//should remove all options				
+
+				let defaultOpt = new Option("Choose a Dairy Product");
+				productList.appendChild(defaultOpt);
+				
+				for(let i=0; i < arrDairy.length; i++ )	{
+					let optionObj = new Option(arrDairy[i]);		
+					productList.appendChild(optionObj);		//add option to select
+				}				
+				
+			}//end addDairyOptions()
+			
+			function assignEvents() {
+				document.querySelector("#fruit").onclick = function() {
+						addFruitOptions();
+				}
+				
+				document.querySelector("#vegetables").onclick = function() {
+						addVegetableOptions();
+				}	
+
+				document.querySelector("#dairy").onclick = function () {
+						addDairyOptions();
+				}
+			
+			}//end assignEvents()
+				
+		</script>
+	
+	</head>
+	
+	<body onload="assignEvents()">
+		<h1>WDV321 Advanced Javascript</h1>
+		
+		<h2>UNIT-3 Dynamic Content - Select</h2>
+		
+		<p>Choose one of the following:</p>
+		<p>
+			<input type="radio" id="fruit" name="gender" value="fruits">
+			<label for="fruit">Fruits</label><br>
+			<input type="radio" id="vegetables" name="gender" value="vegetables">
+			<label for="vegetables">Vegetables</label><br>
+			<input type="radio" id="dairy" name="gender" value="dairy">
+			<label for="dairy">Dairy</label>
+		</p>
+	
+		<p>
+			Select your product:
+		</p>
+		
+		<p>
+			<select name="productsList" >
+				<option value="">Choose a product</option>
+			</select>
+		</p>
+		<p>
+			<button>Clear Choices</button>
+		</p>
+	
+	</body>
+</html>

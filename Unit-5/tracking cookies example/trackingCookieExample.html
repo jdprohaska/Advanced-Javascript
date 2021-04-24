@@ -1,0 +1,39 @@
+<html>
+
+	<head>
+	
+		<title>WDV321 Cookie Maker</title>
+		
+		<script>
+		
+			function trackOpenPageTime() {
+				//alert("inside trackOpenPageTime()");
+				
+				console.log("Cookies " + document.cookie);
+				
+				let today = new Date();		//current time/date stamp
+				
+				//alert(today);
+				
+				document.cookie = "accessTime=" + today + ";" + "expires=Thu, 18 Dec 2035 12:00:00 UTC; path=/";
+				
+				console.log("After Cookies " + document.cookie);
+			}
+		
+		
+		</script>
+	
+	
+	</head>
+	
+	
+	<body onload="trackOpenPageTime()">
+		<h1>WDV321 Advanced Javascript</h1>
+		
+		<h2>Cookie Maker</h2>
+		
+		<p>Go to <a href="cookiesEaterExample.html">Cookie Monster!</a></p>
+
+
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Home</title>
+    <meta content="local storage" name="Justin Prohaska">
+    <style>
+        input, button {
+            padding: 7px;
+            height: 40px;
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+        }
+    </style>
+</head> 
+<body>
+    <h1 id="title">Advanced Javascript</h1>
+    <h2>Unit-6 Local Storage</h2>
+    <h3><a href="localStorageHome.html">Home</a><br>
+    <a href="localStorageAbout.html">About</a></h3>
+    <fieldset>
+        <legend>Insert Data</legend>
+        <input type="text" id="inpKey" placeholder="Enter Key...">
+        <input type="text" id="inpValue" placeholder="Enter Value">
+        <button type="button" id="btnInsert">Insert Data</button>
+        <button type="button" id="clearText">Clear Data</button>
+    </fieldset>
+<fieldset style="display: none;">
+    <legend>Local Storage</legend>
+    <div id="lsOutput"></div>
+</fieldset>
+<p style="display: none;"><button onclick="localStorage.clear()">Clear Local Storage</button></p>
+</body>
+<script>
+const inpKey = document.getElementById("inpKey");
+const inpvalue = document.getElementById("inpValue");
+const btnInsert = document.getElementById("btnInsert");
+const clearText = document.getElementById("clearText");
+const lsOutput = document.getElementById("lsOutput");
+
+btnInsert.onclick = function () {
+    const key = inpKey.value;
+
+    const value = inpvalue.value;
+
+
+    console.log(key);
+    console.log(value);
+
+    if (key && value) {
+        localStorage.setItem(key, value);
+
+        location.reload;
+    }
+    
+};
+
+for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value =localStorage.getItem(key);
+    lsOutput.innerHTML += `${key}: ${value}<br />`;
+};
+
+clearText.onclick = function () {  
+document.getElementById('inpKey').value = "";
+document.getElementById('inpValue').value = "";
+}
+
+
+
+</script>
+</html>

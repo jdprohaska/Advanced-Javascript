@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+
+let arrVegitables = ["brussel sprouts","asparagus","arugula"];
+
+/*click on fruits put a list of fruits in the product list dropdown
+ click on vegitables put a list of vegitables in the product list dropdown
+ click on dairy put a list of dairy in the product list dropdown
+ 1.get the value of fruits
+ 2.add the value to an event listener for fruits
+ 3.create an array for fruits
+ 4.add friuts value to the array
+ 5.make it so that when fruits is selected as a radio choice it displays the fruits array in the dropdown.
+ 
+*/
+function addFruitOptions() {
+    alert("inside addFruitOptions")
+
+
+let chooseOption = "<option value=''>Choose a Product</option>";
+let fruit1 = "<option value='apple'>Apple</option>";
+let fruit2 = "<option value='orange'>orange</option>";
+let fruit3 = "<option value='watermelon'>watermelon</option>";
+
+
+document.querySelector("select").innerHTML = chooseOption + fruit1 + fruit2 + fruit3;
+}
+
+function addVegitableOptions() {
+    alert("inside addVegitableOptions()");
+    
+}
+
+function assignEvents() {
+    document.querySelector("#fruit").onclick = function() {
+    addFruitOptions();
+}
+    document.querySelector("#vegitable").onclick = function() {
+    addVegitableOptions();
+}
+}
+</script>
+
+
+
+</head>
+
+
+
+<body onload="assignEvents()">
+    <h1>WDV321 Advanced Javascript</h1>
+    <h2>Unit-3 Dynamic Content</h2>
+    <p>Choose one of the following:</p>
+    <p>
+        
+      
+            
+            <input type="radio" id="fruit" name="gender" value="Fruits">
+            <label for="male">Fruits</label><br>
+            <input type="radio" id="vegitable" name="gender" value="Vegitables">
+            <label for="female">vegetables</label><br>
+            <input type="radio" id="dairy" name="gender" value="dairy">
+            <label for="other">Dairy</label>
+    </p>
+
+    <p>
+        Select your product:
+    </p>
+
+    <p>
+        <select name="productsList">
+            <option value="">choose a product</option>
+            
+
+       
+        </select>
+    </p>
+    <p>
+        <button>Clear Choices</button>
+    </p>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Justin Prohaska" content="Json Object Creation">
+    <title>Create JSON Object</title>
+    <script>
+         let JavaBook = {
+            "ISBN": "0-596-00016-2",
+            "Title": "Java and XML",
+            "Price": 39.95,
+            "Publisher": "O'Reilly & Associates",
+            "Authors": [
+                {
+                    "Fname": "Brett",
+                    "Lname": "McLaughlin"
+                }
+            ]
+            ,
+            "Copyright": 2000,
+            "Comments": "Update Required"
+        };
+
+            console.log(JavaBook);
+
+        let VB6Book = {
+            "ISBN": "1-861003-32-3",
+            "Title": "Professional Visual Basic 6 XML",
+            "Price": 49.99,
+            "Publisher": "Wrox Press",
+            "Authors": [
+                {
+                    "Fname": "James",
+                    "Lname": "Britt",
+                },
+                {
+                    "Fname": "Tuen",
+                    "Lname": "Duynstee",
+                }
+            ]
+            ,
+            "Copyright": 2000,
+            "Comments": "Outdated text. Switch to C#"
+        };
+
+            console.log(VB6Book);
+
+        let textbooks = {
+            "Books": [
+                {VB6Book},
+                {JavaBook}
+                ]
+        };
+        console.log(textbooks);
+       
+
+
+        let JSONJavabook = JSON.stringify(JavaBook);
+        console.log(JSONJavabook);
+        let JSONVB6Book = JSON.stringify(VB6Book);
+        console.log(JSONVB6Book);
+        let JSONtextbooks = JSON.stringify(textbooks);
+        console.log(JSONtextbooks);
+       
+    </script>
+</head>
+<body>
+    <h1>Please look inside the console for Json object Example.</h1>
+</body>
+</html>

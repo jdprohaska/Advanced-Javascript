@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>WDV321 Cookie Eater</title>
+		
+		<script>
+		
+			console.log("Cookie Monster Want Cookies " + document.cookie);
+		
+			let accessTime = getCookie("accessTime");		//get the value of a cookie
+		
+			console.log("Access Time: " + accessTime);
+			
+			//console.log("Cookie Month " + accessTime.getMonth());	
+		
+			alert("You accessed the Home Page at " + accessTime);
+		
+			function getCookie(cname) {
+			  var name = cname + "=";
+			  var decodedCookie = decodeURIComponent(document.cookie);
+			  var ca = decodedCookie.split(';');
+			  for(var i = 0; i <ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') {
+				  c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0) {
+				  return c.substring(name.length, c.length);
+				}
+			  }
+			  return "";
+			}
+		
+		</script>
+	</head>
+	
+	<body>
+		<h1>WDV321 Advanced Javascript</h1>
+		
+		<h2>Cookie Eater</h2>
+
+
+	</body>
+</html>

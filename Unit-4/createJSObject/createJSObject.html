@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create JS Object</title>
+    <script>
+        let jsJavaBook = {
+            ISBN: "0-596-00016-2",
+            Title: "Java and XML",
+            Price: 39.95,
+            Publisher: "O'Reilly &amp; Associates",
+            Authors: [{
+               fName: " Brett",
+               lName: " McLaughlin",
+               price:  " 22.00"}],
+            Copyright: 2000,
+            Comments: "Update required"
+        };
+
+        console.log(jsJavaBook);
+
+        let jsVBBook = {
+            ISBN: "1-861003-32-3",
+            Title: "Professional Visual Basic 6 XML",
+            Price: 49.99,
+            Publisher: "Wrox Press",
+            Authors: [{
+              fName:  " James",
+               lName: " Britt"},
+               {
+                fName: " Tuen",
+               lName: " Duynstee"
+               }
+               ],
+            Copyright: 2000,
+            Comments: "Outdated text. Switch to C#"
+            
+        };
+
+        console.log(jsVBBook);
+
+        let jsTextbooks = { jsVBBook, jsJavaBook };
+
+        console.log(jsTextbooks);
+
+        
+    </script>
+</head>
+
+<body>
+    <h1>Javascript Objects</h1>
+  
+    <h2>Please look inside console for assignment answers.</h2>
+    
+
+        
+ 
+</body>
+
+</html>

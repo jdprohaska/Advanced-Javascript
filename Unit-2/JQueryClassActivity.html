@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function() {
+      alert("JQuery is available");
+
+      $("#button").click(function() {
+        displayField();
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+<p>WDV321 Advanced Javascript</p>
+<p>Input Processing </p>
+<form name="form1" method="post" action="">
+  <p>Name: 
+    <label for="inputName"></label>
+  <input type="text" name="inputName" id="inputName">
+  </p>
+  <p>
+    <input type="button" name="button" id="button" value="Submit">
+    <input type="reset" name="button2" id="button2" value="Reset">
+  </p>
+</form>
+<p>You Entered: <span></span></p>
+<p>&nbsp;</p>
+</body>
+</html>

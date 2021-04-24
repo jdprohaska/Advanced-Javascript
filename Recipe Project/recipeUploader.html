@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Uploader</title>
+    
+    <link rel="stylesheet" href="css/styleUploader.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>upload a recipe</h1>
+        </header>
+        <section class="columns" class="recipeName">
+            <div class="column">
+                <div class="uploaderTag">
+                    <h2>welcome to the recipe Uploader!</h2>
+                    <p>Here you can add your own recipe to the "Recipe Tab" on the <a href="recipeProject.html">Home
+                            Page</a>. Why don't you start with the name?</p>
+                </div>
+            </div>
+            <div class="column">
+                <form id="myForm" class="form">
+                    <div class="uploaderTag">
+                        <label for="ricipeName">Name of recipe: </label>
+                        <input type="text" name="recipeName" id="recipeName" placeholder="recipe name" required>
+                    </div>
+            </div>
+        </section>
+        <section class="columns">
+            <div class="column">
+                <!--recipe image start-->
+                <div class="uploaderTag">
+                    <label for="recipe-img">Upload recipe image: </label>
+                    <input type='file' multiple="false" accept="image/*" id="recipe-img" onchange="upload()">
+                </div>
+                <!--recipe image end-->
+            </div>
+        </section>
+        <section class="columns">
+            <div class="column">
+                <!--serving start-->
+                <div class="uploaderTag">
+                    <label for="servings">Servings:</label>
+                    <input type="number" id="servings" step=".5" placeholder="serving amount" required>
+                    <!--serving end-->
+                </div>
+            </div>
+            <div class="column">
+                <!--prep start-->
+                <div class="prep-cook">
+                    <div class="uploaderTag">
+                        <label for="prep-time-number">Prep Time:</label>
+                        <input type="number" id="prep-time" name="prep-time" placeholder="Prep time" required>
+                        <div>
+                            <label for="prep-time-measure">Hours/Minutes:</label>
+                            <select id="prep-time-measure" required>
+                                <option value="default">Select Hours/Minutes</option>
+                                <option value="Hours">Hours</option>
+                                <option value="Minutes">Minutes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!--prep end-->
+            </div>
+        </section>
+        <section class="columns">
+            <div class="column">
+                <!--cook start-->
+                <div class="uploaderTag">
+                    <div class="prep-cook">
+                        <div>
+                            <label for="cook-time">Cook Time:</label>
+                            <input type="number" id="cook-time" name="cook-time" placeholder="Cook time" required>
+                        </div>
+                        <label for="cook-time-measure">Hours/Minutes:</label>
+                        <select id="cook-time-measure" required>
+                            <option value="default">Select Hours/Minutes</option>
+                            <option value="Hours">Hours</option>
+                            <option value="Minutes">Minutes</option>
+                        </select>
+
+                    </div>
+                </div>
+                <!--cook end-->
+            </div>
+            <div class="column">
+                <!--difficulty start-->
+                <div class="uploaderTag">
+                    <label for="recipe-difficulty">Recipe difficulty:</label>
+                    <select name="recipe-difficulty" id="recipe-difficulty" required>
+                        <option value="default">difficulty level</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <!--difficulty end-->
+            </div>
+        </section>
+        <section class="columns">
+            <div class="column">
+                <!--ingredients start-->
+
+
+
+                <div id="wrapper">
+                    <label for="recipeIngredients"> Recipe Ingredients:</label>
+
+                    <input type="text" name="recipeIngredients" size="25" class="ingredients" data-delta="0"
+                        id="recipeIngredients" placeholder="enter ingredients" required>
+
+                    <label for="ingredientAmount">Amount:</label>
+                    <input type="number" value="" name="ingredientAmount" class="ingredient-amount" data-delta="0"
+                        id="ingredientAmount" placeholder="enter ingredient amount" size="25" step=".1" required>
+                    <label for="measurement">Measurements:</label>
+                    <select name="measurement" class="ingredient-measurement" data-delta="0" id="measurement" required>
+                        <option value="">None</option>
+                        <option value="teaspoons">Teaspoons</option>
+                        <option value="tablespoons">Tablespoons</option>
+                        <option value="cups">Cups</option>
+                        <option value="cans">Cans</option>
+                        <option value="lbs">Lbs</option>
+                        <option value="Each">Each</option>
+                    </select>
+
+
+                </div>
+                <button type="button" id="btn">Add another ingredient</button>
+            </div>
+        </section>
+
+        <!--ingredients end-->
+
+        <section class="columns">
+            <div class="column">
+                <!--Preparation start-->
+                <div id="wrapper2">
+                    <div>
+                        <label for="preparation">Preparation Instructions</label>
+                        <input type="text" size="50" value="" class="preparation" id="preparation"
+                            placeholder="Enter Prep instructions">
+                    </div>
+
+
+
+
+                </div>
+                <button type="button" id="btn-prep">Add another step</button>
+
+                <!--Preparation end-->
+                <div class="submit">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="reset">
+                </div>
+                <h4><span id="confirmation">The form has been submitted. Please go to the 'user recipe tab' on the <a
+                            href="recipeProject.html">home page</a> to view it.</span></h4>
+            </div>
+        </section>
+
+        </form>
+        <footer id="footer">
+            <div class="column">
+                <h2>Check out my original design for this site</h2>
+                <p><a href="https://xd.adobe.com/view/291abc03-b379-488b-b816-07e502bab715-7c49/"
+                        target="_blank">Original design</a></p>
+            </div>
+            <div class="column">
+                <p><a href="recipeProject.html">Home</a></p>
+                <p><a href="recipeUploader.html">Recipe Uploader</a></p>
+                <p><a href="http://jdprohaska.com/" target="_blank">jdprohaska.com</a></p>
+            </div>
+            <div class="column">
+                <div class="title">
+                    <h1>The Recipe Manager</h1>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Starting number of inputs
+
+
+            // Wrapper
+            const wrapper = document.querySelector('#wrapper');
+            let delta = 0;
+            document.querySelector('#btn').addEventListener('click', () => {
+                ++delta;
+                const container = document.createElement('div');
+
+
+                // Increment the count to ensure that it is unique
+
+                //create ingredient label
+                const labelIngredient = document.createElement('label');
+                labelIngredient.innerHTML = " Recipe Ingredients: "
+
+                // Create your new `<input>` element
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.size = '25';
+                input.classList.add('ingredients');
+                input.placeholder = 'enter ingredient';
+                input.dataset.delta = delta;
+
+                //create amount <label>
+                const labelAmount = document.createElement('label');
+                labelAmount.innerHTML = " Amount: ";
+
+                //create amount <input> element
+                const amount = document.createElement('input');
+                amount.type = 'number';
+                amount.step = '.1';
+                amount.size = "25";
+                amount.classList.add('ingredient-amount');
+                amount.placeholder = 'enter ingredient amount';
+                amount.dataset.delta = delta;
+
+                //create measurement <label>
+                const labelMeasurement = document.createElement('label');
+                labelMeasurement.innerHTML = 'Measurements: ';
+
+                //create measurements <select>
+                const measurement = document.createElement('select');
+                measurement.classList.add('ingredient-measurement');
+                measurement.innerHTML =
+                    "<option>None</option> <option>Teaspoons</option> <option>Tablespoons</option> <option>Cups</option> <option>Cans</option> <option>Lbs</option> <option>Each</option>";
+                measurement.dataset.delta = delta;
+
+                container.appendChild(labelIngredient);
+                container.appendChild(input);
+                container.appendChild(labelAmount);
+                container.appendChild(amount);
+                container.appendChild(labelMeasurement);
+                container.appendChild(measurement);
+
+
+                // Optional: add empty whitespace after each child
+                container.append(document.createTextNode(' '));
+
+
+                wrapper.appendChild(container);
+            });
+
+
+            //wrapper2 preparation
+
+            const wrapper2 = document.querySelector('#wrapper2');
+
+            document.querySelector('#btn-prep').addEventListener('click', () => {
+
+                const container2 = document.createElement('div');
+
+
+                // Increment the count to ensure that it is unique
+
+                // Create Label for preparation
+                const labelPreparation = document.createElement('label');
+                labelPreparation.innerHTML = `Preparation Instructions `;
+                // Create your new `<input>` element
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.size = '50';
+                input.classList.add('preparation');
+                input.placeholder = 'enter next step';
+
+                container2.appendChild(labelPreparation);
+                container2.appendChild(input);
+
+
+
+                // Optional: add empty whitespace after each child
+                container2.append(document.createTextNode(' '));
+
+
+                wrapper2.appendChild(container2);
+            });
+
+            myForm.addEventListener("submit", (e) => {
+               
+                e.preventDefault();
+               
+            
+
+            alert("form has been submitted");
+            document.querySelector("#confirmation").style.display = "block";
+            //javascript variables
+            let recipeName = document.querySelector("#recipeName").value;
+            let recipeImage = document.querySelector("#recipe-img").value;
+            let servings = document.querySelector("#servings").value;
+            let prepTimeNumber = document.getElementById("prep-time").value;
+            let prepTimeMeasure = document.getElementById("prep-time-measure").value;
+            let prepTime = prepTimeNumber + " " + prepTimeMeasure;
+            let cookTimeNumber = document.querySelector("#cook-time").value;
+            let cookTimeMeasure = document.querySelector("#cook-time-measure").value;
+            let cookTime = cookTimeNumber + " " + cookTimeMeasure;
+            let recipeDifficulty = document.querySelector("#recipe-difficulty").value;
+            let recipeIngredients = document.querySelector('#recipeIngredients').value;
+            let userRecipeObjTest = {
+                recipeName,
+                servings,
+                prepTime,
+                cookTime,
+                recipeDifficulty,
+                recipeIngredients,
+                recipeImage
+            };
+            
+
+
+
+
+            //stores name value pairs as javascript object
+
+
+            
+
+            //change object into JSON object and store it in local storage
+            let data = {
+                'ingredient': [],
+                'preparation': []
+            };
+            document.querySelectorAll('input.ingredients').forEach(input => {
+                let delta = input.dataset.delta;
+                let amount = document.querySelector(
+                    `input.ingredient-amount[data-delta='${delta}']`);
+                let measurement = document.querySelector(
+                    `select.ingredient-measurement[data-delta='${delta}']`);
+                console.log(delta, amount, measurement);
+                //data.ingredient.push(value.value);
+                data.ingredient.push({
+                    'name': input.value,
+                    'amount': amount.value,
+                    'measurment': measurement.value
+
+                });
+
+            });
+            document.querySelectorAll('input.preparation').forEach(input => data.preparation.push(input
+                .value));
+
+
+
+            localStorage.clear();
+            localStorage.setItem('userRecipeObj', JSON.stringify(data));
+            localStorage.setItem('userRecipeObjTest', JSON.stringify(userRecipeObjTest));
+        })
+        </script>
+
+
+</body>
+
+</html>
